@@ -8,6 +8,8 @@ import 'package:package_ekyc/generated/locales.g.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 
+import '../../../../shares/utils/time/date_utils.dart';
+
 part 'nfc_information_user_view.dart';
 
 class NfcInformationUserPage extends BaseGetWidget {

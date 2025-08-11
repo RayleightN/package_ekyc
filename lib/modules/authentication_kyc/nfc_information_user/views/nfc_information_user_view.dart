@@ -124,8 +124,13 @@ Widget _buildListGuild(NfcInformationUserController controller) {
             controller.sendNfcRequestModel.identificationSignsVNM),
         _buildItemText(LocaleKeys.nfcInformationUserPage_registrationDate.tr,
             controller.sendNfcRequestModel.registrationDateVMN),
-        _buildItemText(LocaleKeys.nfcInformationUserPage_location.tr,
-            LocaleKeys.nfcInformationUserPage_locationTitle.tr),
+        _buildItemText(
+            LocaleKeys.nfcInformationUserPage_location.tr,
+            isDateBeforeJuly2024(convertStringToDate(
+                    controller.sendNfcRequestModel.registrationDateVMN ?? "",
+                    pattern1))
+                ? LocaleKeys.nfcInformationUserPage_locationTitle.tr
+                : LocaleKeys.nfcInformationUserPage_locationTitleNew.tr),
         _buildItemText(LocaleKeys.nfcInformationUserPage_dateOfExpiry.tr,
             controller.dateOfExpiry),
         _buildItemText(LocaleKeys.nfcInformationUserPage_nameDad.tr,

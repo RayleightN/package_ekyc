@@ -31,7 +31,6 @@ const String pattern22 = "HH:mm:ss - dd/MM/yyyy";
 const String pattern23 = "yyMMdd";
 const String pattern24 = "yyyy/MM/dd HH:mm:ss";
 
-
 String formatDateTimeToString(DateTime dateTime) {
   return DateFormat(pattern1).format(dateTime);
 }
@@ -257,4 +256,12 @@ String? convertDateToStringTimeZone(DateTime? dateTime, String pattern) {
     String timeZoneStr = "${dateTime.timeZoneName}:00";
     return "$strDateTime $timeZoneStr";
   }
+}
+
+bool isDateBeforeJuly2024(DateTime? dateToCheck) {
+  if (dateToCheck == null) {
+    return false;
+  }
+  DateTime july2024 = DateTime(2024, 7, 1);
+  return dateToCheck.isBefore(july2024);
 }

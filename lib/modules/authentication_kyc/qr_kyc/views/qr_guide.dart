@@ -212,9 +212,6 @@ class QRGuidePage extends BaseGetWidget<QRController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // _itemSelect("Tải ảnh lên", () async {
-              //   await controller.getQrToImage();
-              // }),
               GestureDetector(
                 onTap: () {
                   Get.bottomSheet(BaseBottomSheet(

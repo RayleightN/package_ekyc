@@ -174,6 +174,7 @@ class LocaleKeys {
   static const nfcInformationUserPage_location = 'Nơi cấp: ';
   static const nfcInformationUserPage_locationTitle =
       'CỤC CẢNH SÁT QUẢN LÝ HÀNH CHÍNH VỀ TRẬT TỰ XÃ HỘI';
+  static const nfcInformationUserPage_locationTitleNew = 'Bộ Công An';
   static const nfcInformationUserPage_resultAuthentication = 'Kết quả xác thực';
   static const nfc_instructTitle = 'Hướng dẫn quét NFC(CCCD gắn chip)';
   static const nfc_Step1 = 'Bấm vào nút BẮT ĐẦU để tiến hành quét';
