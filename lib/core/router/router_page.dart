@@ -1,14 +1,10 @@
 import 'package:package_ekyc/modules/authentication_kyc/change_password/change_password.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/face_matching_result/face_matching_result.src.dart';
-import 'package:package_ekyc/modules/authentication_kyc/forgot_password/forgot_password.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/verify_profile_ca/verify_profile_ca_src.dart';
-import 'package:package_ekyc/modules/home/home.src.dart';
-import 'package:package_ekyc/modules/login/views/login_page.dart';
 import 'package:package_ekyc/modules/provision/provision.src.dart';
-import 'package:package_ekyc/modules/register_info/register_info.src.dart';
 import 'package:package_ekyc/modules/support/support.src.dart';
 import 'package:package_ekyc/modules/user_info/user_info.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
@@ -22,10 +18,6 @@ class RouteAppPage {
     GetPage(
       name: AppRoutes.initApp,
       page: () => const SplashPage(),
-    ),
-    GetPage(
-      name: AppRoutes.routeLogin,
-      page: () => const LoginPage(),
     ),
     GetPage(
       name: AppRoutes.routeVerifyProfile,
@@ -53,10 +45,6 @@ class RouteAppPage {
       transition: Transition.rightToLeft,
     ),
     GetPage(
-      name: AppRoutes.routeHome,
-      page: () => const HomePage(),
-    ),
-    GetPage(
       name: AppRoutes.routeQrKyc,
       page: () => const QRGuidePage(),
       transition: Transition.rightToLeft,
@@ -79,16 +67,6 @@ class RouteAppPage {
     GetPage(
       name: AppRoutes.routeProvision,
       page: () => const ProvisionPage(),
-      transition: Transition.rightToLeft,
-    ),
-    GetPage(
-      name: AppRoutes.routeRegisterInfo,
-      page: () => const RegisterInfoPage(),
-      transition: Transition.rightToLeft,
-    ),
-    GetPage(
-      name: AppRoutes.routeForgotPass,
-      page: () => const ForgotPasswordPage(),
       transition: Transition.rightToLeft,
     ),
     GetPage(

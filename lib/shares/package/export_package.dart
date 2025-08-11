@@ -4,7 +4,6 @@ export 'package:dio/dio.dart';
 export 'package:flutter_multi_formatter/flutter_multi_formatter.dart'
     hide IntExtension, StringExtension;
 export 'package:flutter_svg/svg.dart';
-export 'package:fluttertoast/fluttertoast.dart';
 export 'package:get/get.dart' hide Response, MultipartFile, FormData;
 export 'package:intl/intl.dart';
 export 'package:logger/logger.dart';

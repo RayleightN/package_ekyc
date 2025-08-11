@@ -18,7 +18,6 @@ dependencies:
   app_settings: 5.1.1
   asn1lib: ^1.5.3
   auto_size_text: ^3.0.0
-  badges: ^3.1.2
   cached_network_image: ^3.3.1
   camera: 0.10.6
   cupertino_icons: ^1.0.6
@@ -34,11 +33,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_multi_formatter: ^2.12.4
-  flutter_pdfview: ^1.2.7
   flutter_svg: ^2.0.10+1
   flutter_tts: ^4.0.2
   flutter_widget_from_html: ^0.15.2
-  fluttertoast: ^8.2.5
   get: ^4.6.6
   google_fonts: 6.1.0
   google_mlkit_face_detection: ^0.12.0
@@ -47,7 +44,6 @@ dependencies:
   image_picker: ^1.0.5
   just_audio: ^0.9.38
   loading_overlay_pro: ^2.1.1
-  local_auth: ^2.2.0
   logger: ^2.2.0
   mobile_scanner: 5.2.3
   nfc_manager: ^3.4.0
