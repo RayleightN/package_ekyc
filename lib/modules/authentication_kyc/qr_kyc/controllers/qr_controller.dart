@@ -19,7 +19,7 @@ class QRController extends BaseGetxController {
 
   // UserInformation userInformation = UserInformation();
   late MobileScannerController cameraController;
-  RxDouble zoomX = 6.0.obs;
+  RxDouble zoomX = 1.0.obs;
 
   @override
   Future<void> onInit() async {
@@ -31,7 +31,7 @@ class QRController extends BaseGetxController {
       formats: [BarcodeFormat.qrCode],
       // torchEnabled: true,
     );
-    cameraController.setZoomScale(zoomX.value * 0.1);
+    // cameraController.setZoomScale(zoomX.value * 0.1);
     hideLoading();
 
     super.onInit();
