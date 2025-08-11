@@ -66,17 +66,17 @@ String formatEfCom(final EfCOM efCom) {
 
 String formatMRZ(final MRZ mrz) {
   return "MRZ\n"
-          "  version: ${mrz.version}\n" +
-      "  doc code: ${mrz.documentCode}\n" +
-      "  doc No.: ${mrz.documentNumber}\n" +
-      "  country: ${mrz.country}\n" +
-      "  nationality: ${mrz.nationality}\n" +
-      "  name: ${mrz.firstName}\n" +
-      "  surname: ${mrz.lastName}\n" +
-      "  gender: ${mrz.gender}\n" +
-      "  date of birth: ${DateFormat.yMd().format(mrz.dateOfBirth)}\n" +
-      "  date of expiry: ${DateFormat.yMd().format(mrz.dateOfExpiry)}\n" +
-      "  add. data: ${mrz.optionalData}\n" +
+      "  version: ${mrz.version}\n"
+      "  doc code: ${mrz.documentCode}\n"
+      "  doc No.: ${mrz.documentNumber}\n"
+      "  country: ${mrz.country}\n"
+      "  nationality: ${mrz.nationality}\n"
+      "  name: ${mrz.firstName}\n"
+      "  surname: ${mrz.lastName}\n"
+      "  gender: ${mrz.gender}\n"
+      "  date of birth: ${DateFormat.yMd().format(mrz.dateOfBirth)}\n"
+      "  date of expiry: ${DateFormat.yMd().format(mrz.dateOfExpiry)}\n"
+      "  add. data: ${mrz.optionalData}\n"
       "  add. data: ${mrz.optionalData2}";
 }
 

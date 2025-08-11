@@ -34,10 +34,7 @@ class ScanNfcKycController extends BaseGetxController
   @override
   Future<void> onInit() async {
     nfcRepository = NfcRepository(this);
-    if (appController.typeAuthentication == AppConst.typeRegister ||
-        appController.typeAuthentication == AppConst.typeForgotPass) {
-      visiblePhone = false;
-    }
+
     idDocumentController.text =
         appController.qrUserInformation.documentNumber ?? "";
     userNameController.text = appController.qrUserInformation.fullName ?? "";

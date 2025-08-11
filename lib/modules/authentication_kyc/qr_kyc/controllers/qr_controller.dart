@@ -54,14 +54,8 @@ class QRController extends BaseGetxController {
       if (Get.isBottomSheetOpen ?? false) {
         Get.back();
       }
-      if (appController.typeAuthentication == AppConst.typeForgotPass) {
-        cameraController.stop();
-        Get.toNamed(AppRoutes.routeScanNfcKyc)?.then((value) {
-          cameraController.start();
-        });
-      } else {
-        Get.offNamed(AppRoutes.routeScanNfcKyc);
-      }
+
+      Get.offNamed(AppRoutes.routeScanNfcKyc);
     }
   }
 

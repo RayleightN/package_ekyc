@@ -32,14 +32,9 @@ class AppController extends GetxController {
   // AuthProfileResponseModel authProfileRequestModel = AuthProfileResponseModel();
   QrUserInformation qrUserInformation = QrUserInformation();
   SendNfcRequestModel sendNfcRequestGlobalModel = SendNfcRequestModel();
-  UserInfoModel userInfoModel = UserInfoModel();
   SdkRequestModel sdkModel = SdkRequestModel();
-  String typeAuthentication = "";
   int tabIndex = 0;
-  RxBool isFingerprintOrFaceID = false.obs;
-  bool isFaceID = false;
-  bool isEnablePay = false;
-  bool isEnablePackage = false;
+
 
   bool isOnlyNFC = false;
   bool isScanEKYC = false;
@@ -94,10 +89,6 @@ class AppController extends GetxController {
   void clearData({bool clearUserInfo = false}) {
     qrUserInformation = QrUserInformation();
     sendNfcRequestGlobalModel = SendNfcRequestModel();
-
-    if (clearUserInfo) {
-      userInfoModel = UserInfoModel();
-    }
   }
 
   void initializeMethod() {

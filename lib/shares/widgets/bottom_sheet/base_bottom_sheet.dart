@@ -6,7 +6,7 @@ import '../text/font_style.dart';
 
 class BaseBottomSheet extends StatelessWidget {
   const BaseBottomSheet({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     this.iconTitle,
@@ -17,7 +17,7 @@ class BaseBottomSheet extends StatelessWidget {
     this.height,
     this.isSecondBottomsheet = false,
     this.noHeader = false,
-  }) : super(key: key);
+  });
 
   final String title;
   final Widget body;

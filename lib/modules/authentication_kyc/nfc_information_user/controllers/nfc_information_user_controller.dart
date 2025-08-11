@@ -222,15 +222,4 @@ class NfcInformationUserController extends BaseGetxController {
     //   showSnackBar(LocaleKeys.nfc_nfc_expired_message.tr);
     // }
   }
-
-  Future<void> gotoPage() async {
-    if (appController.typeAuthentication == AppConst.typeRegister) {
-      Get.toNamed(AppRoutes.routeRegisterInfo);
-    } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
-      Get.toNamed(AppRoutes.routeForgotPass);
-    } else if (appController.typeAuthentication ==
-        AppConst.typeAuthentication) {
-      Get.toNamed(AppRoutes.routeLiveNessKyc);
-    }
-  }
 }
