@@ -8,11 +8,9 @@ import 'package:hive/hive.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
-import 'package:package_ekyc/hive_helper/hive_adapters.dart';
-import 'package:package_ekyc/hive_helper/register_adapters.dart';
+
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
-import 'package:package_ekyc/modules/authentication_kyc/verify_profile_ca/models/login_ca_model/login_ca_model.src.dart';
 import 'package:package_ekyc/modules/login/login.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -21,8 +19,6 @@ import 'package:permission_handler/permission_handler.dart';
 late Box hiveApp;
 
 late PackageInfo packageInfo;
-
-late Box<LoginCaRequestModel> hiveUserLogin;
 
 const platform = MethodChannel('2id.ekyc');
 
@@ -177,11 +173,5 @@ Future<void> initHive() async {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
   hiveApp = await Hive.openBox(LocaleKeys.app_name.tr);
-  registerAdapters();
-  await openBox();
   packageInfo = await PackageInfo.fromPlatform();
-}
-
-Future<void> openBox() async {
-  hiveUserLogin = await Hive.openBox(HiveAdapters.loginCaRequestModel);
 }

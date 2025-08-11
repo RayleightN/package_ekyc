@@ -1,10 +1,7 @@
-import 'package:package_ekyc/modules/authentication_kyc/change_password/change_password.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/face_matching_result/face_matching_result.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
-import 'package:package_ekyc/modules/authentication_kyc/verify_profile_ca/verify_profile_ca_src.dart';
-import 'package:package_ekyc/modules/provision/provision.src.dart';
 import 'package:package_ekyc/modules/support/support.src.dart';
 import 'package:package_ekyc/modules/user_info/user_info.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
@@ -19,11 +16,7 @@ class RouteAppPage {
       name: AppRoutes.initApp,
       page: () => const SplashPage(),
     ),
-    GetPage(
-      name: AppRoutes.routeVerifyProfile,
-      page: () => const VerifyProfilePage(),
-      transition: Transition.rightToLeft,
-    ),
+
     GetPage(
       name: AppRoutes.routeScanNfcKyc,
       page: () => const ScanNfcKycPage(),
@@ -49,26 +42,13 @@ class RouteAppPage {
       page: () => const QRGuidePage(),
       transition: Transition.rightToLeft,
     ),
-    GetPage(
-      name: AppRoutes.routeAuthenticationGuide,
-      page: () => const AuthenticationGuidePage(),
-      transition: Transition.rightToLeft,
-    ),
-    GetPage(
-      name: AppRoutes.routeChangePassword,
-      page: () => const ChangePasswordPage(),
-      transition: Transition.rightToLeft,
-    ),
+
     GetPage(
       name: AppRoutes.routeUserInfo,
       page: () => const UserInfoPage(),
       transition: Transition.rightToLeft,
     ),
-    GetPage(
-      name: AppRoutes.routeProvision,
-      page: () => const ProvisionPage(),
-      transition: Transition.rightToLeft,
-    ),
+
     GetPage(
       name: AppRoutes.routeSupport,
       page: () => const SupportPage(),

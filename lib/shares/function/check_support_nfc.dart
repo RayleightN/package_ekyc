@@ -1,5 +1,5 @@
-import 'package:package_ekyc/core/core.src.dart';
 import 'package:flutter_nfc_kit/flutter_nfc_kit.dart';
+import 'package:package_ekyc/core/core.src.dart';
 
 class CheckSupportNfc {
   static Future<String> checkNfcAvailability() async {

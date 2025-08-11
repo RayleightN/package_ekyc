@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 

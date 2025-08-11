@@ -6,7 +6,6 @@ import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 import 'package:package_ekyc/shares/widgets/text/font_style.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UtilWidget {
@@ -227,44 +226,6 @@ class UtilWidget {
             indent: AppDimens.padding50,
           ),
       ],
-    );
-  }
-
-  static Widget buildSmartRefresher({
-    required RefreshController refreshController,
-    required Widget child,
-    ScrollController? scrollController,
-    Function()? onRefresh,
-    Function()? onLoadMore,
-    bool enablePullDown = true,
-    bool enablePullUp = false,
-  }) {
-    return SmartRefresher(
-      enablePullDown: enablePullDown,
-      enablePullUp: enablePullUp,
-      scrollController: scrollController,
-      header: const MaterialClassicHeader(
-        color: AppColors.primaryTextColor,
-      ),
-      controller: refreshController,
-      onRefresh: onRefresh,
-      onLoading: onLoadMore,
-      footer: buildSmartRefresherCustomFooter(),
-      child: child,
-    );
-  }
-
-  static Widget buildSmartRefresherCustomFooter() {
-    return CustomFooter(
-      builder: (context, mode) {
-        if (mode == LoadStatus.loading) {
-          return const CupertinoActivityIndicator(
-            color: AppColors.primaryTextColor,
-          );
-        } else {
-          return const SizedBox();
-        }
-      },
     );
   }
 }

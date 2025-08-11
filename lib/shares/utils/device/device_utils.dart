@@ -1,4 +1,3 @@
-import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 
 /// Lấy tên thiết bị điện thoại

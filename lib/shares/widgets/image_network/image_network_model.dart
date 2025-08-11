@@ -1,6 +1,5 @@
-import 'package:package_ekyc/assets.dart';
-import 'package:package_ekyc/core/core.src.dart';
 import 'package:flutter/material.dart';
+import 'package:package_ekyc/core/core.src.dart';
 
 class SDSImageNetworkModel {
   final String? imgUrl;

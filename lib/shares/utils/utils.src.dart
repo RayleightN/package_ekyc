@@ -5,6 +5,5 @@ export 'device/ratio_screen.dart';
 export 'formatter/formatter.src.dart';
 export 'key_board/keyboard.dart';
 export 'permission/permission.dart';
-export 'text2speech/text2speech.src.dart';
 export 'validate/validate.dart';
 export 'sdk/sdk_utils.src.dart';

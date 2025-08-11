@@ -27,15 +27,12 @@ dependencies:
       url: https://github.com/HVLoc/dmrtd
       ref: master
   dotted_border: ^2.1.0
-  dropdown_button2: ^2.3.9
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_multi_formatter: ^2.12.4
   flutter_svg: ^2.0.10+1
-  flutter_tts: ^4.0.2
-  flutter_widget_from_html: ^0.15.2
   get: ^4.6.6
   google_fonts: 6.1.0
   google_mlkit_face_detection: ^0.12.0
@@ -51,8 +48,6 @@ dependencies:
   percent_indicator: ^4.2.3
   permission_handler: 11.3.1
   plugin_platform_interface: ^2.0.2
-  pull_to_refresh: ^2.0.0
-  qr_flutter: ^4.1.0
   screenshot: ^3.0.0
   url_launcher: ^6.2.1
   wakelock_plus: ^1.2.10
