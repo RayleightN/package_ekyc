@@ -2,7 +2,6 @@ import 'package:package_ekyc/modules/authentication_kyc/face_matching_result/fac
 import 'package:package_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
-import 'package:package_ekyc/modules/support/support.src.dart';
 import 'package:package_ekyc/modules/user_info/user_info.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 
@@ -49,11 +48,6 @@ class RouteAppPage {
       transition: Transition.rightToLeft,
     ),
 
-    GetPage(
-      name: AppRoutes.routeSupport,
-      page: () => const SupportPage(),
-      transition: Transition.rightToLeft,
-    ),
     GetPage(
       name: AppRoutes.routeFaceMatchingResult,
       page: () => const FaceMatchingResultPage(),
