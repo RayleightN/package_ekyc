@@ -133,7 +133,9 @@ class NfcInformationUserController extends BaseGetxController {
         if (value.status) {
           authenticationSuccess = value.data?.result == true;
           authenticationVisible.value = value.data?.result == true;
+          sendNfcRequestModel.verifySignatureData = value.data;
           sendNfcRequestModel.statusSuccess = authenticationSuccess;
+
           appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
         } else {
           ShowDialog.showDialogNotification(
