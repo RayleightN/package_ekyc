@@ -33,6 +33,9 @@ dependencies:
     sdk: flutter
   flutter_multi_formatter: ^2.12.4
   flutter_svg: ^2.0.10+1
+  flutter_qr_scanner:
+    git:
+      url: https://github.com/HVLoc/flutter_qr_scanner
   get: ^4.6.6
   google_fonts: 6.1.0
   google_mlkit_face_detection: 0.11.1

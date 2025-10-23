@@ -153,7 +153,7 @@ class AppController extends GetxController {
     if (qrUserInformation.documentNumber.isStringNotEmpty) {
       await Get.toNamed(AppRoutes.routeScanNfcKyc);
     } else {
-      await Get.toNamed(AppRoutes.routeQrKyc);
+      await Get.toNamed(AppRoutes.routeQrNative);
     }
     return sendNfcRequestGlobalModel;
   }
