@@ -88,23 +88,23 @@ Widget _buildInfor(ScanNfcKycController controller) {
                       autoFocus: true,
                       paddingModel: const EdgeInsets.symmetric(),
                     ),
-                    BaseFormLogin.buildInputData(
-                      title: "Ngày đăng ký:",
-                      textEditingController: controller.doeController,
-                      isLoading: true,
-                      hintText: "",
-                      textInputType: TextInputType.number,
-                      currentNode: controller.doeFocus,
-                      errorValidator:
-                          LocaleKeys.register_account_errorValidatorCCCD.tr,
-                      // onValidator: (text) =>
-                      //     UtilWidget.validateId(text),
-                      fillColor: AppColors.basicWhite.obs,
-                      autoFocus: true,
-                      paddingModel: const EdgeInsets.symmetric(),
-                    ),
                   ],
                 ),
+              ),
+              BaseFormLogin.buildInputData(
+                title: "Ngày đăng ký:",
+                textEditingController: controller.doeController,
+                isLoading: false,
+                hintText: "",
+                textInputType: TextInputType.number,
+                currentNode: controller.doeFocus,
+                errorValidator: "",
+                isValidate: false,
+                // onValidator: (text) =>
+                //     UtilWidget.validateId(text),
+                fillColor: AppColors.basicWhite.obs,
+                autoFocus: true,
+                paddingModel: const EdgeInsets.symmetric(),
               ),
               Visibility(
                 visible: controller.visiblePhone,

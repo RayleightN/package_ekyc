@@ -5,6 +5,7 @@ import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 
 import '../../shares/shares.src.dart';
+import 'modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'modules/sdk/sdk.src.dart';
 
 class PackageEkyc {
@@ -26,6 +27,7 @@ class PackageEkyc {
 
   static Future<SendNfcRequestModel?> checkEKYC(
     SdkRequestModel sdkRequestModel, {
+    QrUserInformation? qrUserInformation,
     GuidNFC? guidNFC,
   }) async {
     Get.toNamed(AppRoutes.initApp);
@@ -33,6 +35,12 @@ class PackageEkyc {
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     appController.guidNFC = guidNFC;
+    appController.qrUserInformation.documentNumber =
+        sdkRequestModel.documentNumber;
+    if (qrUserInformation != null) {
+      appController.qrUserInformation = qrUserInformation;
+    }
+
     AppConstSDK.apiKey = appController.sdkModel.apiKey;
     var result = await appController.checkPermissionApp();
     Get.back();

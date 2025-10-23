@@ -256,20 +256,19 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                   )).then((value) => controller.idDocumentController.clear());
                 },
                 child: Container(
-                    // decoration: BoxDecoration(
-                    //   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                    //   boxShadow: [
-                    //     BoxShadow(
-                    //       color: AppColors.shadow.withOpacity(0.5),
-                    //       spreadRadius: -3.4,
-                    //       blurRadius: 0.5,
-                    //       offset: const Offset(0, -3.5),
-                    //     ),
-                    //   ],
-                    // ),
-                    // child:
-                    //     SvgPicture.asset(Assets.ASSETS_SVG_ICON_BUTTON_QR_SVG)
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.shadow,
+                          spreadRadius: -3.4,
+                          blurRadius: 0.5,
+                          offset: Offset(0, -3.5),
+                        ),
+                      ],
                     ),
+                    child:
+                        SvgPicture.asset(Assets.ASSETS_SVG_ICON_BUTTON_QR_SVG)),
               ),
               // _itemSelect("Nhập số CCCD", () {
               //   Get.bottomSheet(SDSBottomSheet(

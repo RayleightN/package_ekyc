@@ -46,6 +46,7 @@ class QRController extends BaseGetxController {
   @override
   void onClose() {
     cameraController.dispose();
+    super.onClose();
   }
 
   void getDataToEnter(String text) {
@@ -54,8 +55,11 @@ class QRController extends BaseGetxController {
       if (Get.isBottomSheetOpen ?? false) {
         Get.back();
       }
+      cameraController.stop();
 
-      Get.offNamed(AppRoutes.routeScanNfcKyc);
+      Get.toNamed(AppRoutes.routeScanNfcKyc)?.then((value) {
+        cameraController.start();
+      });
     }
   }
 
