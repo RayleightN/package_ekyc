@@ -79,7 +79,7 @@ class MyHomePage extends StatelessWidget {
                   );
 
                   QrUserInformation qrUserInformation = QrUserInformation(
-                    documentNumber: "020098007724",
+                    documentNumber: "",
                   );
                   await PackageEkyc.checkEKYC(
                     sdkRequestModel,
