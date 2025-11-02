@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_ekyc/core/router/app_router.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
@@ -33,14 +34,15 @@ class _MyAppState extends State<MyApp> {
       // translationsKeys: AppTranslation.translations,
       locale: const Locale('vi', 'VN'),
 
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
 
+  final RxBool isQRNative = false.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,10 +55,28 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                children: [
+                  const Expanded(
+                    child: Text("Chế độ QR Native"),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Obx(() => CupertinoSwitch(
+                        value: isQRNative.value,
+                        onChanged: (value) {
+                          isQRNative.value = value;
+                        })),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   // Gọi hàm đọc NFC khi nhấn nút
-                  await PackageEkyc.readOnlyNFC().then((onValue) {
+                  await PackageEkyc.readOnlyNFC(
+                    isScanQRNative: isQRNative.value,
+                  ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
                       print(
@@ -84,6 +104,7 @@ class MyHomePage extends StatelessWidget {
                   await PackageEkyc.checkEKYC(
                     sdkRequestModel,
                     // qrUserInformation: qrUserInformation,
+                    isScanQRNative: isQRNative.value,
                   ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;

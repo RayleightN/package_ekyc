@@ -11,12 +11,14 @@ import 'modules/sdk/sdk.src.dart';
 class PackageEkyc {
   static Future<SendNfcRequestModel?> readOnlyNFC({
     GuidNFC? guidNFC,
+    bool isScanQRNative = false,
   }) async {
     Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
 
     appController.isOnlyNFC = true;
     appController.guidNFC = guidNFC;
+    appController.isScanQRNative = isScanQRNative;
 
     Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
@@ -29,12 +31,15 @@ class PackageEkyc {
     SdkRequestModel sdkRequestModel, {
     QrUserInformation? qrUserInformation,
     GuidNFC? guidNFC,
+    bool isScanQRNative = false,
   }) async {
     Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     appController.guidNFC = guidNFC;
+    appController.isScanQRNative = isScanQRNative;
+
     appController.qrUserInformation.documentNumber =
         sdkRequestModel.documentNumber;
     if (qrUserInformation != null) {
