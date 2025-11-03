@@ -52,7 +52,7 @@ class QRNativeController extends BaseGetxController {
         appController.qrUserInformation.gender = splitStrings[3];
         appController.qrUserInformation.address = splitStrings[4];
         appController.qrUserInformation.informationIdCard = splitStrings[0];
-        Get.offNamed(AppRoutes.routeScanNfcKyc);
+        Get.toNamed(AppRoutes.routeScanNfcKyc);
         hideLoadingOverlay();
         return;
       }
@@ -71,7 +71,7 @@ class QRNativeController extends BaseGetxController {
       if (Get.isBottomSheetOpen ?? false) {
         Get.back();
       }
-      Get.offNamed(AppRoutes.routeScanNfcKyc);
+      Get.toNamed(AppRoutes.routeScanNfcKyc);
     }
   }
 }
