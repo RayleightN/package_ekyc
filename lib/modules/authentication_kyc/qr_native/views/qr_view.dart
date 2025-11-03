@@ -54,41 +54,40 @@ Widget _buildBody(QRNativeController controller) {
 }
 
 Widget _buildListGuild() {
-  return Positioned(
-    left: 30,
-    right: 30,
-    top: Get.height / 3.8 + Get.height / 6 + 140,
-    child: Container(
-      decoration: const BoxDecoration(
-        color: AppColors.secondaryCamPastel2,
-        borderRadius: BorderRadius.all(Radius.circular(AppDimens.radius10)),
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextUtils(
-            text: "Hướng dẫn:",
-            color: AppColors.colorDisable,
-            availableStyle: StyleEnum.subBold,
-            maxLine: 3,
-          ),
-          TextUtils(
-            text: "Bước 1: Đặt mã QR trên thẻ CCCD vào vị trí khung",
-            color: AppColors.colorDisable,
-            availableStyle: StyleEnum.bodyRegular,
-            maxLine: 3,
-          ),
-          sdsSB5,
-          TextUtils(
-            text:
-                "Bước 2: Chờ hệ thống định danh và xác thực cho tới khi có thông báo thành công.",
-            color: AppColors.colorDisable,
-            availableStyle: StyleEnum.bodyRegular,
-            maxLine: 3,
-          ),
-        ],
-      ).paddingAll(AppDimens.padding15),
+  return Container(
+    decoration: const BoxDecoration(
+      color: AppColors.secondaryCamPastel2,
+      borderRadius: BorderRadius.all(Radius.circular(AppDimens.radius10)),
     ),
+    child: const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TextUtils(
+          text: "Hướng dẫn:",
+          color: AppColors.colorDisable,
+          availableStyle: StyleEnum.subBold,
+          maxLine: 3,
+        ),
+        TextUtils(
+          text: "Bước 1: Đặt mã QR trên thẻ CCCD vào vị trí khung",
+          color: AppColors.colorDisable,
+          availableStyle: StyleEnum.bodyRegular,
+          maxLine: 3,
+        ),
+        sdsSB5,
+        TextUtils(
+          text:
+              "Bước 2: Chờ hệ thống định danh và xác thực cho tới khi có thông báo thành công.",
+          color: AppColors.colorDisable,
+          availableStyle: StyleEnum.bodyRegular,
+          maxLine: 3,
+        ),
+      ],
+    ).paddingAll(AppDimens.padding15),
+  ).paddingOnly(
+    left: AppDimens.padding15,
+    right: AppDimens.padding15,
+    bottom: AppDimens.padding10,
   );
 }
 
