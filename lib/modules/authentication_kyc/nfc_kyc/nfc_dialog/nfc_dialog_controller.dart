@@ -406,7 +406,9 @@ class NfcDialogController extends BaseGetxController {
             : appController.qrUserInformation.address;
 
         sendNfcRequestModel.identificationSignsVNM = listDg13[9];
-        sendNfcRequestModel.registrationDateVMN = listDg13[10];
+        if (listDg13[10].isNotEmpty) {
+          sendNfcRequestModel.registrationDateVMN = listDg13[10];
+        }
         sendNfcRequestModel.doeVMN = listDg13[11];
         sendNfcRequestModel.nameDadVMN = listDg13[12];
         sendNfcRequestModel.nameMomVMN = listDg13[13];
