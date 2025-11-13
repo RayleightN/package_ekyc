@@ -192,8 +192,8 @@ class LocaleKeys {
   static const nfc_introduceScanNfc1 = 'Đưa điện thoại của bạn gần CCCD';
   static const nfc_introduceScanNfc2 = 'Vui lòng không di chuyển CCCD';
   static const nfc_introduceScanNfc4 = 'Đang đọc dữ liệu 20%';
-  static const nfc_introduceScanNfc6 = 'Đang đọc dữ liệu 40%';
-  static const nfc_introduceScanNfc5 = 'Đang đọc dữ liệu 60%';
+  static const nfc_introduceScanNfc5 = 'Đang đọc dữ liệu 40%';
+  static const nfc_introduceScanNfc6 = 'Đang đọc dữ liệu 60%';
   static const nfc_introduceScanNfc7 = 'Đang đọc dữ liệu 80%';
   static const nfc_introduceScanNfc8 = 'Đọc dữ liệu thành công 100%';
   static const nfc_nfc_expired_message =

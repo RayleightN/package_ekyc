@@ -5,6 +5,7 @@ import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 
 import '../../shares/shares.src.dart';
+import 'modules/authentication_kyc/nfc_kyc/nfc_dialog/read_nfc.dart';
 import 'modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'modules/sdk/sdk.src.dart';
 
@@ -46,5 +47,35 @@ class PackageEkyc {
     Get.back();
     Get.delete<AppController>();
     return result;
+  }
+
+  static Future<void> readCCCD({
+    required String idDocument,
+    required Function(SendNfcRequestModel sendNfcRequestModel) onSuccess,
+    String? otherPaper,
+    String? residentVMN,
+    String? introduceScanNfc1,
+    String? introduceScanNfc2,
+    String? introduceScanNfc20,
+    String? introduceScanNfc40,
+    String? introduceScanNfc60,
+    String? introduceScanNfc80,
+    String? introduceScanNfcSuccess,
+    String? introduceScanNfcError,
+  }) async {
+    await ReadNfc().readCCCD(
+      idDocument: idDocument,
+      onSuccess: onSuccess,
+      otherPaper: otherPaper,
+      residentVMN: residentVMN,
+      introduceScanNfc1: introduceScanNfc1,
+      introduceScanNfc2: introduceScanNfc2,
+      introduceScanNfc20: introduceScanNfc20,
+      introduceScanNfc40: introduceScanNfc40,
+      introduceScanNfc60: introduceScanNfc60,
+      introduceScanNfc80: introduceScanNfc80,
+      introduceScanNfcSuccess: introduceScanNfcSuccess,
+      introduceScanNfcError: introduceScanNfcError,
+    );
   }
 }

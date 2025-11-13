@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_ekyc/core/router/app_router.src.dart';
+import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_dialog/read_nfc.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'package:package_ekyc/modules/sdk/sdk.src.dart';
@@ -79,7 +80,7 @@ class MyHomePage extends StatelessWidget {
                   );
 
                   QrUserInformation qrUserInformation = QrUserInformation(
-                    documentNumber: "020098007724",
+                    documentNumber: "",
                   );
                   await PackageEkyc.checkEKYC(
                     sdkRequestModel,
@@ -93,6 +94,18 @@ class MyHomePage extends StatelessWidget {
                   });
                 },
                 child: const Text('Xác thực EKYC'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  await PackageEkyc.readCCCD(
+                      idDocument: "", // Truyền số CCCD
+                      onSuccess: (sendNfcRequestModel) {
+                        print(
+                            'CCCD(${DateTime.now()}): ${sendNfcRequestModel.toJson()}');
+                      });
+                },
+                child: const Text('Chỉ Đọc CCCD'),
               ),
             ],
           ),
