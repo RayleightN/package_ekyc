@@ -8,11 +8,13 @@ Widget _buildBody(QRNativeController controller) {
         Expanded(
           child: Stack(
             children: [
-              QrScannerPage(
-                onScanResult: (result) {
-                  controller.getData(result);
-                },
-              ),
+              Obx(() => controller.isSuccess.value
+                  ? const SizedBox()
+                  : QrScannerPage(
+                      onScanResult: (result) {
+                        controller.getData(result);
+                      },
+                    )),
               Positioned.fill(
                 child: CustomPaint(
                   painter: QRScanOverlayPainter(

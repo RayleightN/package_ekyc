@@ -20,6 +20,8 @@ class QRNativeController extends BaseGetxController {
 
   QrUserInformation qrInformationResult = QrUserInformation();
 
+  RxBool isSuccess = false.obs;
+
   @override
   Future<void> onInit() async {
     showLoadingOverlay();
@@ -30,7 +32,6 @@ class QRNativeController extends BaseGetxController {
 
   void getData(String barcodeScanRes) {
     try {
-      showLoadingOverlay();
       qrInformationResult = GetDataQr.instance.getData(barcodeScanRes);
       barcodeController = barcodeScanRes;
       idIdentity = barcodeController?.substring(0, 12);
@@ -52,8 +53,8 @@ class QRNativeController extends BaseGetxController {
         appController.qrUserInformation.gender = splitStrings[3];
         appController.qrUserInformation.address = splitStrings[4];
         appController.qrUserInformation.informationIdCard = splitStrings[0];
+        isSuccess.value = true;
         Get.toNamed(AppRoutes.routeScanNfcKyc);
-        hideLoadingOverlay();
         return;
       }
     } catch (e) {

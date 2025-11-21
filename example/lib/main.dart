@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_ekyc/core/router/app_router.src.dart';
-import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_dialog/read_nfc.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'package:package_ekyc/modules/sdk/sdk.src.dart';

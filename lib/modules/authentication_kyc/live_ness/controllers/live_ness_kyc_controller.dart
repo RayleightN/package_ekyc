@@ -105,6 +105,7 @@ class LiveNessKycController extends BaseGetxController {
 
   Future<void> initCamera() async {
     cameras = await availableCameras();
+
     cameraController = CameraController(
       cameras[1],
       ResolutionPreset.medium,
@@ -113,7 +114,9 @@ class LiveNessKycController extends BaseGetxController {
           ? ImageFormatGroup.nv21
           : ImageFormatGroup.bgra8888,
     );
-    await cameraController.initialize();
+    await cameraController.initialize().catchError((e) {
+      print("Lỗi camera: $e");
+    });
     cameraIsInitialize.value = cameraController.value.isInitialized;
   }
 
