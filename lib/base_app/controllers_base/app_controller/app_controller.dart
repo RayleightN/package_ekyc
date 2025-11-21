@@ -35,9 +35,9 @@ class AppController extends GetxController {
   SdkRequestModel sdkModel = SdkRequestModel();
   int tabIndex = 0;
 
-
   bool isOnlyNFC = false;
   bool isScanEKYC = false;
+  bool isScanQRNative = false;
 
   GuidNFC? guidNFC;
 
@@ -153,7 +153,9 @@ class AppController extends GetxController {
     if (qrUserInformation.documentNumber.isStringNotEmpty) {
       await Get.toNamed(AppRoutes.routeScanNfcKyc);
     } else {
-      await Get.toNamed(AppRoutes.routeQrKyc);
+      await Get.toNamed(
+        isScanQRNative ? AppRoutes.routeQrNative : AppRoutes.routeQrKyc,
+      );
     }
     return sendNfcRequestGlobalModel;
   }

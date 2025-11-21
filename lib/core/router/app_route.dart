@@ -10,6 +10,7 @@ class AppRoutes {
   static const String routeHome = '/home';
   static const String routeTermsAndPolicies = '/terms_and_policies';
   static const String routeQrKyc = "/qr_kyc";
+  static const String routeQrNative = "/qr_native";
   static const String routeRegisterAccount = "/register_account";
   static const String routeAuthenticationGuide = "/authentication_guide";
   static const String routeChangePassword = "/change_password";

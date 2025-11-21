@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_ekyc/core/router/app_router.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_dialog/read_nfc.dart';
@@ -34,14 +35,15 @@ class _MyAppState extends State<MyApp> {
       // translationsKeys: AppTranslation.translations,
       locale: const Locale('vi', 'VN'),
 
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
 
+  final RxBool isQRNative = false.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,10 +56,28 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                children: [
+                  const Expanded(
+                    child: Text("Chế độ QR Native"),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Obx(() => CupertinoSwitch(
+                        value: isQRNative.value,
+                        onChanged: (value) {
+                          isQRNative.value = value;
+                        })),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   // Gọi hàm đọc NFC khi nhấn nút
-                  await PackageEkyc.readOnlyNFC().then((onValue) {
+                  await PackageEkyc.readOnlyNFC(
+                    isScanQRNative: isQRNative.value,
+                  ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
                       print(
@@ -76,7 +96,7 @@ class MyHomePage extends StatelessWidget {
                     secretKey: "63f81c69722acaa42f622ec16d702fdb",
                     apiKey:
                         "eyJ4NXQjUzI1NiI6Ik5XUXdPVFJrTWpBNU9XRmpObVUyTnpCbE5UTTNaRFV3T0RVellqWXdabUpsWlROa1pEQTRPRFU0WlRVd1pHSXdObVV5TW1abVpUTmhaRGt5TmpRMlpBPT0iLCJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ==.eyJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJpZCI6MSwidXVpZCI6Ijk3M2I2Mjg1LWNiNmYtNDIxYi1iMzg0LTlhNDIyN2FhMzRiOSJ9LCJpc3MiOiJodHRwczpcL1wvdWF0LWFwaW0uMmlkLnZuOjQ0M1wvb2F1dGgyXC90b2tlbiIsImtleXR5cGUiOiJTQU5EQk9YIiwicGVybWl0dGVkUmVmZXJlciI6IiIsInRva2VuX3R5cGUiOiJhcGlLZXkiLCJwZXJtaXR0ZWRJUCI6IiIsImlhdCI6MTczNzI3OTcxNCwianRpIjoiYTM2MGNmMDctZTQ1My00MTc1LWEwOTAtNWE3ODU4NWZiY2NkIn0=.smuXRLDclnOrc1oBWnVMhgXrOodww6ht3oPTZq-nHnDtspZKKYKoAwJCBrXDy18JweqZWFciZJJ-iLL0pKX_svl0qiddGXO4uxKiaZUbHvzFCtQ7kLYYCKWKqXqB1A8cGM8w0VoKp_VUPtwDj8Ren3adjyM6uF2rxx5ubVeXfxxuaAgpwTBEUTTFgI35VUQeiYHVaJPnN23LwzO6O2eX6YucF7p6OGg_XLs7NedlJnAEsp_LC15mnZnK6IJCzvrnKQAdeW16tXYFT-FGJdVqlyaQwBIStfhJpeQglOZ43FfvjtWdt0G-nYucevoywqeTBpkdvHvjjzDJPX9Xs8FaLw==",
-                    isProd: true,
+                    isProd: false,
                   );
 
                   QrUserInformation qrUserInformation = QrUserInformation(
@@ -85,6 +105,7 @@ class MyHomePage extends StatelessWidget {
                   await PackageEkyc.checkEKYC(
                     sdkRequestModel,
                     // qrUserInformation: qrUserInformation,
+                    isScanQRNative: isQRNative.value,
                   ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
