@@ -72,6 +72,7 @@ class QRNativeController extends BaseGetxController {
       if (Get.isBottomSheetOpen ?? false) {
         Get.back();
       }
+      isSuccess.value = true;
       Get.toNamed(AppRoutes.routeScanNfcKyc);
     }
   }
