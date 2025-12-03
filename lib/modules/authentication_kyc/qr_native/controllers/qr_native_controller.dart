@@ -54,7 +54,9 @@ class QRNativeController extends BaseGetxController {
         appController.qrUserInformation.address = splitStrings[4];
         appController.qrUserInformation.informationIdCard = splitStrings[0];
         isSuccess.value = true;
-        Get.toNamed(AppRoutes.routeScanNfcKyc);
+        Get.toNamed(AppRoutes.routeScanNfcKyc)?.then((value) {
+          isSuccess.value = false;
+        });
         return;
       }
     } catch (e) {

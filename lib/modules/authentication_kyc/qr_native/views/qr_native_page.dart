@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qr_scanner/qr_scanner_page.dart';
 import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
+import 'package:package_ekyc/core/router/app_route.dart';
 import 'package:package_ekyc/core/theme/colors.dart';
 import 'package:package_ekyc/core/values/dimens.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
