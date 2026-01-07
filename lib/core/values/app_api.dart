@@ -82,9 +82,9 @@ class AppApi {
   ///sdk
   static const String faceMatching = "/face-matches/base64?imageType=CARD";
   static const String faceMatchingOther =
-      "https://uat-apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=CARD";
+      "https://uat-apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=PORTRAIT";
   static const String faceMatchingOtherProd =
-      "https://apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=CARD";
+      "https://apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=PORTRAIT";
   static const String verifyC06 =
       "https://uat-apim.2id.vn/gateway/2id-check/v.1/c06-verify/integration/verify-card";
   static const String verifyC06Prod =
