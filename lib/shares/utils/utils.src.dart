@@ -7,3 +7,4 @@ export 'key_board/keyboard.dart';
 export 'permission/permission.dart';
 export 'validate/validate.dart';
 export 'sdk/sdk_utils.src.dart';
+export 'connectivity/connectivity_utils.dart';

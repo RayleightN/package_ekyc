@@ -168,7 +168,15 @@ class LiveNessKycController extends BaseGetxController {
         eyeOpenLeftOld = faces[0].leftEyeOpenProbability ?? 0.0;
         question = liveNessData.question;
         if (isSuccessLiveNess.value) {
-          await liveNessSuccess();
+          bool isConnect = await checkNetwork();
+          if(isConnect) {
+            await liveNessSuccess();
+          }else{
+            Get.back();
+            ShowDialog.showDialogNotificationError(
+              LocaleKeys.dialog_errorConnectFailedStr.tr,
+            );
+          }
         } else {
           if (currentStep.value <= AppConst.currentStepMax) {
             if (question.compareTo(questionTemp[currentStep.value - 1]) == 0) {

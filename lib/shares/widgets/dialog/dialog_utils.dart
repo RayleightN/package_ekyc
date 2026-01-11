@@ -10,7 +10,7 @@ class ShowDialog {
 
   static void dismissDialog() {
     if (_numberOfDialogs > 0) {
-      Get.back(closeOverlays: true);
+      Get.back();
     }
   }
 
