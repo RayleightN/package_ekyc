@@ -172,6 +172,7 @@ class LiveNessKycController extends BaseGetxController {
           if(isConnect) {
             await liveNessSuccess();
           }else{
+            isSuccessLiveNess.value = false;
             Get.back();
             ShowDialog.showDialogNotificationError(
               LocaleKeys.dialog_errorConnectFailedStr.tr,
