@@ -152,6 +152,7 @@ class BaseGetxController extends GetxController {
       isLoadingOverlay.value = false;
       // if (errorContent.isNotEmpty) showSnackBar(errorContent);
       if (errorContent.isNotEmpty) {
+        Get.back(); // do not remove this !!!
         ShowDialog.showErrorMessage(errorContent);
       }
     });

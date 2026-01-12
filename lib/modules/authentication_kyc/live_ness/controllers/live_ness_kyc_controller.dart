@@ -172,6 +172,9 @@ class LiveNessKycController extends BaseGetxController {
           if (isConnect) {
             await liveNessSuccess();
           } else {
+            if (cameraController.value.isStreamingImages) {
+              await cameraController.stopImageStream();
+            }
             isSuccessLiveNess.value = false;
             Get.back();
             ShowDialog.showDialogNotificationError(
@@ -304,10 +307,6 @@ class LiveNessKycController extends BaseGetxController {
           value.errors != null && value.errors!.isNotEmpty
               ? value.errors?.first.message?.vn ?? ""
               : LocaleKeys.live_ness_matchingFailContent.tr,
-          confirm: () {
-            Get.back();
-            Get.back();
-          },
           title: LocaleKeys.live_ness_matchingFailContent.tr,
           titleButton: LocaleKeys.dialog_redo.tr,
         );
@@ -322,10 +321,6 @@ class LiveNessKycController extends BaseGetxController {
         } else {
           ShowDialog.showDialogNotification(
             "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
-            confirm: () {
-              Get.back();
-              Get.back();
-            },
             title: LocaleKeys.live_ness_matchingFailContent.tr,
             titleButton: LocaleKeys.dialog_redo.tr,
           );

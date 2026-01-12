@@ -114,7 +114,7 @@ class ShowDialog {
 
   static void showDialogNotification(
     String content, {
-    required Function confirm,
+    // required Function confirm,
     // required String actionTitle,
     bool isActiveBack = true,
     String titleButton = "",
@@ -160,7 +160,10 @@ class ShowDialog {
               ),
               ButtonUtils.buildButton(
                 titleButton,
-                confirm,
+                () {
+                  Get.back();
+                  dismissDialog();
+                },
                 backgroundColor: AppColors.primaryBlue1,
                 height: AppDimens.iconHeightButton,
               ).paddingSymmetric(horizontal: AppDimens.padding16),
@@ -175,129 +178,129 @@ class ShowDialog {
     );
   }
 
-  static void showDialogTime({
-    bool isActiveBack = true,
-    String startTime = "",
-    String endTime = "",
-    required Function confirm,
-    required Function toCalender,
-  }) {
-    _showDialog(
-      Dialog(
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppDimens.padding15),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                children: [
-                  Expanded(
-                    child: Stack(
-                      children: [
-                        const Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Column(
-                            children: [
-                              sdsSBHeight2,
-                              TextUtils(
-                                text: "Chọn khoảng thời gian",
-                                availableStyle: StyleEnum.body14Bold,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: IconButton(
-                            padding: EdgeInsets.zero,
-                            constraints: const BoxConstraints(),
-                            style: const ButtonStyle(
-                                tapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap),
-                            icon: const Icon(
-                              Icons.clear,
-                              color: AppColors.primaryBlue1,
-                              size: AppDimens.padding25,
-                            ),
-                            onPressed: () {
-                              Get.back();
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              sdsSBHeight10,
-              const TextUtils(
-                text: "Ngày bắt đầu",
-                availableStyle: StyleEnum.body14,
-              ),
-              sdsSBHeight3,
-              _itemTime(time: startTime, toCalender: toCalender),
-              sdsSBHeight10,
-              const TextUtils(
-                text: "Ngày kết thúc",
-                availableStyle: StyleEnum.body14,
-              ),
-              sdsSBHeight3,
-              _itemTime(time: endTime, toCalender: toCalender),
-              sdsSBHeight25,
-              Container(
-                alignment: Alignment.center,
-                child: ButtonUtils.buildButton(
-                  LocaleKeys.dialog_confirm.tr,
-                  confirm,
-                  width: 120,
-                  backgroundColor: AppColors.primaryBlue1,
-                  height: AppDimens.iconHeightButton,
-                ).paddingSymmetric(horizontal: AppDimens.padding16),
-              ),
-              const SizedBox(
-                height: AppDimens.padding16,
-              )
-            ],
-          ),
-        ).paddingAll(AppDimens.padding10),
-      ),
-      isActiveBack,
-    );
-  }
+  // static void showDialogTime({
+  //   bool isActiveBack = true,
+  //   String startTime = "",
+  //   String endTime = "",
+  //   required Function confirm,
+  //   required Function toCalender,
+  // }) {
+  //   _showDialog(
+  //     Dialog(
+  //       elevation: 0,
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(AppDimens.padding15),
+  //       ),
+  //       child: SingleChildScrollView(
+  //         child: Column(
+  //           crossAxisAlignment: CrossAxisAlignment.start,
+  //           children: <Widget>[
+  //             Row(
+  //               children: [
+  //                 Expanded(
+  //                   child: Stack(
+  //                     children: [
+  //                       const Align(
+  //                         alignment: Alignment.bottomCenter,
+  //                         child: Column(
+  //                           children: [
+  //                             sdsSBHeight2,
+  //                             TextUtils(
+  //                               text: "Chọn khoảng thời gian",
+  //                               availableStyle: StyleEnum.body14Bold,
+  //                             ),
+  //                           ],
+  //                         ),
+  //                       ),
+  //                       Align(
+  //                         alignment: Alignment.topRight,
+  //                         child: IconButton(
+  //                           padding: EdgeInsets.zero,
+  //                           constraints: const BoxConstraints(),
+  //                           style: const ButtonStyle(
+  //                               tapTargetSize:
+  //                                   MaterialTapTargetSize.shrinkWrap),
+  //                           icon: const Icon(
+  //                             Icons.clear,
+  //                             color: AppColors.primaryBlue1,
+  //                             size: AppDimens.padding25,
+  //                           ),
+  //                           onPressed: () {
+  //                             Get.back();
+  //                           },
+  //                         ),
+  //                       )
+  //                     ],
+  //                   ),
+  //                 )
+  //               ],
+  //             ),
+  //             sdsSBHeight10,
+  //             const TextUtils(
+  //               text: "Ngày bắt đầu",
+  //               availableStyle: StyleEnum.body14,
+  //             ),
+  //             sdsSBHeight3,
+  //             _itemTime(time: startTime, toCalender: toCalender),
+  //             sdsSBHeight10,
+  //             const TextUtils(
+  //               text: "Ngày kết thúc",
+  //               availableStyle: StyleEnum.body14,
+  //             ),
+  //             sdsSBHeight3,
+  //             _itemTime(time: endTime, toCalender: toCalender),
+  //             sdsSBHeight25,
+  //             Container(
+  //               alignment: Alignment.center,
+  //               child: ButtonUtils.buildButton(
+  //                 LocaleKeys.dialog_confirm.tr,
+  //                 confirm,
+  //                 width: 120,
+  //                 backgroundColor: AppColors.primaryBlue1,
+  //                 height: AppDimens.iconHeightButton,
+  //               ).paddingSymmetric(horizontal: AppDimens.padding16),
+  //             ),
+  //             const SizedBox(
+  //               height: AppDimens.padding16,
+  //             )
+  //           ],
+  //         ),
+  //       ).paddingAll(AppDimens.padding10),
+  //     ),
+  //     isActiveBack,
+  //   );
+  // }
 
-  static Container _itemTime({String time = "", required Function toCalender}) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.basicGreyDialog,
-        border: Border.all(color: AppColors.basicGreyDialog, width: 0.5),
-        borderRadius:
-            const BorderRadius.all(Radius.circular(AppDimens.padding5)),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: TextUtils(
-              text: time == "" ? "__/__/____" : time,
-              availableStyle: StyleEnum.body14,
-            ),
-          ),
-          IconButton(
-              onPressed: () {
-                toCalender();
-              },
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints(),
-              style: const ButtonStyle(
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-              icon: SvgPicture.asset(Assets.ASSETS_SVG_ICON_CALENDER_SVG))
-        ],
-      ).paddingSymmetric(
-          vertical: AppDimens.padding10, horizontal: AppDimens.padding18),
-    );
-  }
+  // static Container _itemTime({String time = "", required Function toCalender}) {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       color: AppColors.basicGreyDialog,
+  //       border: Border.all(color: AppColors.basicGreyDialog, width: 0.5),
+  //       borderRadius:
+  //           const BorderRadius.all(Radius.circular(AppDimens.padding5)),
+  //     ),
+  //     child: Row(
+  //       children: [
+  //         Expanded(
+  //           child: TextUtils(
+  //             text: time == "" ? "__/__/____" : time,
+  //             availableStyle: StyleEnum.body14,
+  //           ),
+  //         ),
+  //         IconButton(
+  //             onPressed: () {
+  //               toCalender();
+  //             },
+  //             padding: EdgeInsets.zero,
+  //             constraints: const BoxConstraints(),
+  //             style: const ButtonStyle(
+  //                 tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+  //             icon: SvgPicture.asset(Assets.ASSETS_SVG_ICON_CALENDER_SVG))
+  //       ],
+  //     ).paddingSymmetric(
+  //         vertical: AppDimens.padding10, horizontal: AppDimens.padding18),
+  //   );
+  // }
 
   static void dialogBase({
     required Widget icon,

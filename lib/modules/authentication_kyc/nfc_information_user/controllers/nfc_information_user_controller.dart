@@ -142,9 +142,6 @@ class NfcInformationUserController extends BaseGetxController {
             value.errors != null && value.errors!.isNotEmpty
                 ? value.errors?.first.message?.vn ?? ""
                 : LocaleKeys.live_ness_matchingFailContent.tr,
-            confirm: () {
-              Get.back();
-            },
             title: LocaleKeys.live_ness_matchingFailContent.tr,
             titleButton: LocaleKeys.dialog_close.tr,
           );
