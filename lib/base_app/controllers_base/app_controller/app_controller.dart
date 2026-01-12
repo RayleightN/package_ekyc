@@ -35,11 +35,12 @@ class AppController extends GetxController {
   SdkRequestModel sdkModel = SdkRequestModel();
   int tabIndex = 0;
 
-
   bool isOnlyNFC = false;
   bool isScanEKYC = false;
 
   GuidNFC? guidNFC;
+  // GlobalKey<NavigatorState>? eKycRouterKey;
+  Function(SendNfcRequestModel? kycData)? onSuccess;
 
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực

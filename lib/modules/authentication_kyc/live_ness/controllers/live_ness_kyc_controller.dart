@@ -169,9 +169,9 @@ class LiveNessKycController extends BaseGetxController {
         question = liveNessData.question;
         if (isSuccessLiveNess.value) {
           bool isConnect = await checkNetwork();
-          if(isConnect) {
+          if (isConnect) {
             await liveNessSuccess();
-          }else{
+          } else {
             isSuccessLiveNess.value = false;
             Get.back();
             ShowDialog.showDialogNotificationError(
@@ -316,6 +316,8 @@ class LiveNessKycController extends BaseGetxController {
           appController.sendNfcRequestGlobalModel.isFaceMatching = true;
           appController.sendNfcRequestGlobalModel.faceMatching =
               value.data?.matching;
+          appController.onSuccess
+              ?.call(appController.sendNfcRequestGlobalModel);
           Get.offNamed(AppRoutes.routeFaceMatchingResult);
         } else {
           ShowDialog.showDialogNotification(

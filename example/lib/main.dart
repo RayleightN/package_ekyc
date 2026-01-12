@@ -6,6 +6,8 @@ import 'package:package_ekyc/modules/sdk/sdk.src.dart';
 import 'package:package_ekyc/package_ekyc.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 

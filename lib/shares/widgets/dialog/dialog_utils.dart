@@ -9,8 +9,8 @@ class ShowDialog {
   static int _numberOfDialogs = 0;
 
   static void dismissDialog() {
-    if (_numberOfDialogs > 0) {
-      Get.back();
+    if (_numberOfDialogs > 0 && Get.overlayContext != null) {
+      Navigator.of(Get.overlayContext!, rootNavigator: true).pop();
     }
   }
 

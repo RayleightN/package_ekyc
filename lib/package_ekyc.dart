@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/const.dart';
@@ -29,12 +30,15 @@ class PackageEkyc {
     SdkRequestModel sdkRequestModel, {
     QrUserInformation? qrUserInformation,
     GuidNFC? guidNFC,
+    // required GlobalKey<NavigatorState> eKycRouterKey,
+    Function(SendNfcRequestModel? kycData)? onSuccess,
   }) async {
     Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     appController.guidNFC = guidNFC;
+    appController.onSuccess = onSuccess;
     appController.qrUserInformation.documentNumber =
         sdkRequestModel.documentNumber;
     if (qrUserInformation != null) {
