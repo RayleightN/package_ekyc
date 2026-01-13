@@ -74,7 +74,7 @@ class AppDimens {
   static const double btnSmall = 20;
   static const double btnMediumTb = 56;
   static const double btnMediumMax = 44;
-  static const double btnMedium = 40;
+  static const double btnMedium = 46;
   static const double iconHeightButton = 38;
 
   /// Radius

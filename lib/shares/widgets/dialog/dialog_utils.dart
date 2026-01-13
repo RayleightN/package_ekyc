@@ -165,7 +165,6 @@ class ShowDialog {
                   dismissDialog();
                 },
                 backgroundColor: AppColors.primaryBlue1,
-                height: AppDimens.iconHeightButton,
               ).paddingSymmetric(horizontal: AppDimens.padding16),
               const SizedBox(
                 height: AppDimens.padding16,
@@ -345,7 +344,6 @@ class ShowDialog {
                 function,
                 backgroundColor: AppColors.primaryBlue1,
                 borderRadius: BorderRadius.circular(AppDimens.radius4),
-                height: AppDimens.iconHeightButton,
               ).paddingSymmetric(
                 horizontal: AppDimens.paddingDefaultHeight,
                 vertical: AppDimens.padding10,

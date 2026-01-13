@@ -57,14 +57,14 @@ class ButtonUtils {
     Color? iconColor,
     double? iconSize,
     double? width,
-    double? height,
+    // double? height,
     Color? colorText,
     BorderRadiusGeometry? borderRadius,
     Border? border,
   }) {
     return Container(
       width: width ?? double.infinity,
-      height: height ?? AppDimens.btnMedium,
+      height: AppDimens.btnMedium,
       decoration: BoxDecoration(
         color: backgroundColor,
         border: border ?? const Border(),
