@@ -137,6 +137,7 @@ class NfcInformationUserController extends BaseGetxController {
           sendNfcRequestModel.statusSuccess = authenticationSuccess;
 
           appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+          appController.onSuccess?.call(sendNfcRequestModel);
         } else {
           ShowDialog.showDialogNotification(
             value.errors != null && value.errors!.isNotEmpty

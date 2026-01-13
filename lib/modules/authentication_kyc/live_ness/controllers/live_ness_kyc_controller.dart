@@ -315,8 +315,6 @@ class LiveNessKycController extends BaseGetxController {
           appController.sendNfcRequestGlobalModel.isFaceMatching = true;
           appController.sendNfcRequestGlobalModel.faceMatching =
               value.data?.matching;
-          appController.onSuccess
-              ?.call(appController.sendNfcRequestGlobalModel);
           Get.offNamed(AppRoutes.routeFaceMatchingResult);
         } else {
           ShowDialog.showDialogNotification(
